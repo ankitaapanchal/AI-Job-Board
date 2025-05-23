@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if request.user.is_applicant %}
+<section class="dashboard-section">
+   <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+         <h1 class="display-5 fw-bold">Welcome to Applicant Dashboard on Job Buddy!</h1>
+         <p class="fs-4 pt-3">We are excited to have you here. This is your personal space where you can update your profile, upload your resume, explore new job opportunities, and manage your applications with ease. Start applying to jobs with just one click and take the next step in your career journey. If you need any assistance, feel free to chat with Chat Buddy, your personal assistant available at every step!</p>
+      </div>
+   </div>
+   <div class="applicant-dashboard text-center">
+      <img src="{% static 'applicant-dashboard.avif' %}" alt="Applicant Dashboard" class="img-fluid">
+   </div>
+</section>
+
+{% if not request.user.has_resume %}
+<div class="alert alert-danger" role="alert">
+   <b>You are seeing this because your profile is incomplete. Please complete it from <a
+         href="{% url 'update-resume' %}">here.</a></b>
+</div>
+{% endif %}
+
+
+{% elif request.user.is_recruiter %}
+<section class="dashboard-section">
+   <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+         <h1 class="display-5 fw-bold">Welcome to Recruiter Dashboard on Job Buddy!</h1>
+         <p class="fs-4 pt-3">This is your dedicated space to create your company profile and post new job opportunities. Easily track applications, download resumes, and find the right candidates for your open roles. Your hiring process just got simpler and faster! If you need any help, Chat Buddy is always available to assist you along the way.</p>
+      </div>
+   </div>
+
+   <div class="recruiter-dashboard text-center">
+      <img src="{% static 'recruiter-dashboard.jpg' %}" alt="Recruiter Dashboard" class="img-fluid">
+   </div>
+</section>
+{% if not request.user.has_company %}
+<div class="alert alert-danger" role="alert">
+   <b>You are seeing this because you didn't create any company. Create company from <a
+         href="{% url 'update-company' %}">here.</a></b>
+</div>
+{% endif %}
+{% endif %}
+{% endblock content %}

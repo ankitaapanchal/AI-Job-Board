@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="chat-box" id="chatbox">
+    <div class="chat-box-header">
+        <h3>Chat Buddy</h3>
+        <p onclick="toggleChatbox()">×</p>
+    </div>
+
+    <div class="chat-box-body" id="chat-log">
+        <!-- Messages will appear here -->
+    </div>
+
+    <div class="chat-box-footer">
+        <input type="text" id="chat-input" placeholder="Ask anything..." onkeydown="if(event.key==='Enter') sendMessage()">
+        <button class="send" onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<div class="chat-button" onclick="toggleChatbox()">
+    <img src="{% static 'chatbot-logo.webp' %}" alt="Chatbot Logo">
+</div>
+
+

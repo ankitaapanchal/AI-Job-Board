@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Ubuntu&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.chat-box {
+    width: 400px;
+    height: 500px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.chat-box-header {
+    height: 60px;
+    background: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.chat-box-header p {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.chat-box-body {
+    flex: 1;
+    background: #f8f8f8;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.chat-box-footer {
+    display: flex;
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+.chat-box-footer input {
+    flex: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-right: 10px;
+    background: whitesmoke;
+}
+
+.chat-box-footer input:focus {
+    outline: none;
+}
+
+.chat-box-footer .send {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+}
+
+.chat-button {
+    width: 60px;
+    height: 60px;
+    background: #007bff;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: none;
+    outline: none;
+}
+
+.chat-button img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none; 
+    outline: none; 
+}
+
+
+/* Chat bubbles */
+.chat-bubble {
+    background: white;
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    max-width: 75%;
+    font-size: 14px;
+}
+
+.chat-bubble.user {
+    margin-left: auto;
+    background: #DCF8C6;
+}
+
+.chat-bubble.bot {
+    margin-right: auto;
+    background: #fff;
+}
